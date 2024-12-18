@@ -1,0 +1,17 @@
+# Build and temp folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.vs/
+
+# macOS files
+.DS_Store
+
+# VS Code files
+.vscode/
+
+# Debugging files
+launchSettings.json
