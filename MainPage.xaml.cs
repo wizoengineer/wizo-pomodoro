@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-		UpdateTimerLabel();
+	sssss	UpdateTimerLabel();
 	}
 
 	private void StartTimer(object sender, EventArgs e)
