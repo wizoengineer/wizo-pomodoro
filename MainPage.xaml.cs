@@ -33,7 +33,7 @@ public partial class MainPage : ContentPage
 
 	private void ResetTimer(object sender, EventArgs e)
 	{
-		_timer?.Stop();
+		_timer?.Stop();asdasdsa
 		_remainingTime = 25 * 60;
 		_isRunning = false;
 		UpdateTimerLabel();
