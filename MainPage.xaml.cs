@@ -7,18 +7,25 @@ public partial class MainPage : ContentPage
 	private System.Timers.Timer? _timer;
 	private int _remainingTime = 25 * 60;
 	private bool _isRunning = false;
+	private int _sessionCount = 0;
 
 	public MainPage()
 	{
 		InitializeComponent();
 		UpdateTimerLabel();
 	}
+
 	private void StartAndPause(object sender, EventArgs e)
 	{
+		if (_sessionCount == 4 && !_isRunning)
+		{
+			_sessionCount = 0;
+			ResetSessions();
+		}
+
 		if (!_isRunning)
 		{
 			_isRunning = true;
-
 			StartAndPauseTimer.Text = "Pause";
 
 			_timer = new System.Timers.Timer(1000);
@@ -29,7 +36,6 @@ public partial class MainPage : ContentPage
 		{
 			_timer?.Stop();
 			_isRunning = false;
-
 			StartAndPauseTimer.Text = "Start";
 		}
 	}
@@ -39,9 +45,11 @@ public partial class MainPage : ContentPage
 		_timer?.Stop();
 		_remainingTime = 25 * 60;
 		_isRunning = false;
+		_sessionCount = 0;
+
+		ResetSessions();
 
 		StartAndPauseTimer.Text = "Start";
-
 		UpdateTimerLabel();
 	}
 
@@ -56,9 +64,12 @@ public partial class MainPage : ContentPage
 			{
 				DisplayAlert("Time's Up!", "Take a short break!", "OK");
 
-				_remainingTime = 25 * 60;
-				UpdateTimerLabel();
+				_sessionCount++;
+				UpdateSessionColors();
 
+				_remainingTime = 25 * 60;
+
+				UpdateTimerLabel();
 				StartAndPauseTimer.Text = "Start";
 			});
 
@@ -73,6 +84,22 @@ public partial class MainPage : ContentPage
 	private void UpdateTimerLabel()
 	{
 		TimerLabel.Text = $"{_remainingTime / 60:D2}:{_remainingTime % 60:D2}";
+	}
+
+	private void UpdateSessionColors()
+	{
+		if (_sessionCount >= 1) Session1.BackgroundColor = Color.FromArgb("#FF6347");
+		if (_sessionCount >= 2) Session2.BackgroundColor = Color.FromArgb("#FF6347");
+		if (_sessionCount >= 3) Session3.BackgroundColor = Color.FromArgb("#FF6347");
+		if (_sessionCount >= 4) Session4.BackgroundColor = Color.FromArgb("#FF6347");
+	}
+
+	private void ResetSessions()
+	{
+		Session1.BackgroundColor = Colors.Gray;
+		Session2.BackgroundColor = Colors.Gray;
+		Session3.BackgroundColor = Colors.Gray;
+		Session4.BackgroundColor = Colors.Gray;
 	}
 }
 

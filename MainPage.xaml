@@ -14,6 +14,31 @@
                        HorizontalOptions="Center"
                        TextColor="White"/>
 
+                <HorizontalStackLayout x:Name="SessionLayout"
+                                       Spacing="15"
+                                       HorizontalOptions="Center">
+                        <BoxView x:Name="Session1"
+                                 WidthRequest="5"
+                                 HeightRequest="16"
+                                 BackgroundColor="Gray"
+                                 CornerRadius="2.5"></BoxView>
+                        <BoxView x:Name="Session2"
+                                 WidthRequest="5"
+                                 HeightRequest="16"
+                                 BackgroundColor="Gray"
+                                 CornerRadius="2.5"></BoxView>
+                        <BoxView x:Name="Session3"
+                                 WidthRequest="5"
+                                 HeightRequest="16"
+                                 BackgroundColor="Gray"
+                                 CornerRadius="2.5"></BoxView>
+                        <BoxView x:Name="Session4"
+                                 WidthRequest="5"
+                                 HeightRequest="16"
+                                 BackgroundColor="Gray"
+                                 CornerRadius="2.5"></BoxView>
+                </HorizontalStackLayout>
+
                 <HorizontalStackLayout Spacing="15"
                                        HorizontalOptions="Center">
                         <Button x:Name="StartAndPauseTimer"
