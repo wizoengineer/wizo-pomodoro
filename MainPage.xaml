@@ -14,12 +14,6 @@
                        HorizontalOptions="Center"
                        TextColor="White"/>
 
-                <Label x:Name="SessionTypeLabel"
-                       Text="Focus"
-                       FontSize="24"
-                       HorizontalOptions="Center"
-                       TextColor="White"/>
-
                 <HorizontalStackLayout x:Name="SessionLayout"
                                        Spacing="15"
                                        HorizontalOptions="Center">
@@ -44,6 +38,12 @@
                                  BackgroundColor="Gray"
                                  CornerRadius="2.5"></BoxView>
                 </HorizontalStackLayout>
+
+                <Label x:Name="SessionTypeLabel"
+                       Text="Focus"
+                       FontSize="18"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"/>
 
                 <HorizontalStackLayout Spacing="15"
                                        HorizontalOptions="Center">
