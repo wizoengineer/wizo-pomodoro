@@ -16,12 +16,9 @@
 
                 <HorizontalStackLayout Spacing="15"
                                        HorizontalOptions="Center">
-                        <Button Text="Start"
-                                Clicked="StartTimer"
-                                BackgroundColor="#3d3d3d"
-                                TextColor="White"/>
-                        <Button Text="Pause"
-                                Clicked="PauseTimer"
+                        <Button x:Name="StartAndPauseTimer"
+                                Text="Start"
+                                Clicked="StartAndPause"
                                 BackgroundColor="#3d3d3d"
                                 TextColor="White"/>
                         <Button Text="Reset"

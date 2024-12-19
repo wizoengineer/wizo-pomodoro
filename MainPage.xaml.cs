@@ -13,22 +13,25 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		UpdateTimerLabel();
 	}
-
-	private void StartTimer(object sender, EventArgs e)
+	private void StartAndPause(object sender, EventArgs e)
 	{
-		if (_isRunning) return;
+		if (!_isRunning)
+		{
+			_isRunning = true;
 
-		_isRunning = true;
+			StartAndPauseTimer.Text = "Pause";
 
-		_timer = new System.Timers.Timer(1000);
-		_timer.Elapsed += UpdateTimer;
-		_timer.Start();
-	}
+			_timer = new System.Timers.Timer(1000);
+			_timer.Elapsed += UpdateTimer;
+			_timer.Start();
+		}
+		else
+		{
+			_timer?.Stop();
+			_isRunning = false;
 
-	private void PauseTimer(object sender, EventArgs e)
-	{
-		_timer?.Stop();
-		_isRunning = false;
+			StartAndPauseTimer.Text = "Start";
+		}
 	}
 
 	private void ResetTimer(object sender, EventArgs e)
@@ -36,6 +39,9 @@ public partial class MainPage : ContentPage
 		_timer?.Stop();
 		_remainingTime = 25 * 60;
 		_isRunning = false;
+
+		StartAndPauseTimer.Text = "Start";
+
 		UpdateTimerLabel();
 	}
 
@@ -49,6 +55,8 @@ public partial class MainPage : ContentPage
 			MainThread.BeginInvokeOnMainThread(() =>
 			{
 				DisplayAlert("Time's Up!", "Take a short break!", "OK");
+
+				StartAndPauseTimer.Text = "Start";
 			});
 
 			return;
