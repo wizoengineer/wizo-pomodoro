@@ -68,13 +68,11 @@ public partial class MainPage : ContentPage
 			{
 				if (_isBreak)
 				{
-					DisplayAlert("Break Over!", "Get ready for your next focus session", "OK");
 					_isBreak = false;
 					_remainingTime = 25 * 60;
 				}
 				else
 				{
-					DisplayAlert("Time's Up!", "Take a short break!", "OK");
 					_sessionCount++;
 					UpdateSessionColors();
 					_isBreak = true;

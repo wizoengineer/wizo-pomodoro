@@ -4,58 +4,83 @@
              x:Class="wizo_pomodoro.MainPage"
              BackgroundColor="#020101">
 
-        <VerticalStackLayout Spacing="25"
-                             Padding="20"
-                             VerticalOptions="Center">
+        <Grid>
+                <VerticalStackLayout Grid.Row="0"
+                                     Spacing="25"
+                                     Padding="20"
+                                     VerticalOptions="Center">
+                        <Label x:Name="TimerLabel"
+                               Text="25:00"
+                               FontSize="64"
+                               HorizontalOptions="Center"
+                               TextColor="White"/>
 
-                <Label x:Name="TimerLabel"
-                       Text="25:00"
-                       FontSize="64"
-                       HorizontalOptions="Center"
-                       TextColor="White"/>
+                        <HorizontalStackLayout x:Name="SessionLayout"
+                                               Spacing="15"
+                                               HorizontalOptions="Center">
+                                <BoxView x:Name="Session1"
+                                         WidthRequest="5"
+                                         HeightRequest="16"
+                                         BackgroundColor="Gray"
+                                         CornerRadius="2.5"/>
+                                <BoxView x:Name="Session2"
+                                         WidthRequest="5"
+                                         HeightRequest="16"
+                                         BackgroundColor="Gray"
+                                         CornerRadius="2.5"/>
+                                <BoxView x:Name="Session3"
+                                         WidthRequest="5"
+                                         HeightRequest="16"
+                                         BackgroundColor="Gray"
+                                         CornerRadius="2.5"/>
+                                <BoxView x:Name="Session4"
+                                         WidthRequest="5"
+                                         HeightRequest="16"
+                                         BackgroundColor="Gray"
+                                         CornerRadius="2.5"/>
+                        </HorizontalStackLayout>
 
-                <HorizontalStackLayout x:Name="SessionLayout"
-                                       Spacing="15"
-                                       HorizontalOptions="Center">
-                        <BoxView x:Name="Session1"
-                                 WidthRequest="5"
-                                 HeightRequest="16"
-                                 BackgroundColor="Gray"
-                                 CornerRadius="2.5"></BoxView>
-                        <BoxView x:Name="Session2"
-                                 WidthRequest="5"
-                                 HeightRequest="16"
-                                 BackgroundColor="Gray"
-                                 CornerRadius="2.5"></BoxView>
-                        <BoxView x:Name="Session3"
-                                 WidthRequest="5"
-                                 HeightRequest="16"
-                                 BackgroundColor="Gray"
-                                 CornerRadius="2.5"></BoxView>
-                        <BoxView x:Name="Session4"
-                                 WidthRequest="5"
-                                 HeightRequest="16"
-                                 BackgroundColor="Gray"
-                                 CornerRadius="2.5"></BoxView>
-                </HorizontalStackLayout>
+                        <Label x:Name="SessionTypeLabel"
+                               Text="Focus"
+                               FontSize="18"
+                               HorizontalOptions="Center"
+                               TextColor="Gray"/>
+                </VerticalStackLayout>
 
-                <Label x:Name="SessionTypeLabel"
-                       Text="Focus"
-                       FontSize="18"
-                       HorizontalOptions="Center"
-                       TextColor="Gray"/>
+                <Button x:Name="StartAndPauseTimer"
+                        Text="Start"
+                        Clicked="StartAndPause"
+                        BackgroundColor="#3d3d3d"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End"
+                        Margin="0,0,0,50"
+                        WidthRequest="120"
+                        HeightRequest="50"/>
 
-                <HorizontalStackLayout Spacing="15"
-                                       HorizontalOptions="Center">
-                        <Button x:Name="StartAndPauseTimer"
-                                Text="Start"
-                                Clicked="StartAndPause"
-                                BackgroundColor="#3d3d3d"
-                                TextColor="White"/>
-                        <Button Text="Reset"
-                                Clicked="ResetTimer"
-                                BackgroundColor="#3d3d3d"
-                                TextColor="White"/>
-                </HorizontalStackLayout>
-        </VerticalStackLayout>
+                <Button Text="?"
+                        Clicked="ResetTimer"
+                        BackgroundColor="Black"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        TextColor="White"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        HorizontalOptions="Start"
+                        VerticalOptions="End"
+                        Margin="30,0,0,30"/>
+
+                <Button Text="🛠️"
+                        BackgroundColor="Black"
+                        BorderWidth="1"
+                        BorderColor="Gray"
+                        TextColor="White"
+                        WidthRequest="50"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Margin="0,0,30,30"/>
+        </Grid>
 </ContentPage>
