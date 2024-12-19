@@ -4,34 +4,30 @@
              x:Class="wizo_pomodoro.MainPage"
              BackgroundColor="#f3f4f6">
 
-    <VerticalStackLayout Spacing="25"
-                         Padding="20"
-                         VerticalOptions="Center">
-        <Label Text="WizoPomodoro"
-               FontSize="32"
-               HorizontalOptions="Center"
-               TextColor="#333"/>
+        <VerticalStackLayout Spacing="25"
+                             Padding="20"
+                             VerticalOptions="Center">
 
-        <Label x:Name="TimerLabel"
-               Text="25:00"
-               FontSize="64"
-               HorizontalOptions="Center"
-               TextColor="#FF6347"/>
+                <Label x:Name="TimerLabel"
+                       Text="25:00"
+                       FontSize="64"
+                       HorizontalOptions="Center"
+                       TextColor="#FF6347"/>
 
-        <HorizontalStackLayout Spacing="15"
-                               HorizontalOptions="Center">
-            <Button Text="Start"
-                    Clicked="StartTimer"
-                    BackgroundColor="#4CAF50"
-                    TextColor="White"/>
-            <Button Text="Pause"
-                    Clicked="PauseTimer"
-                    BackgroundColor="#FFC107"
-                    TextColor="White"/>
-            <Button Text="Reset"
-                    Clicked="ResetTimer"
-                    BackgroundColor="#F44336"
-                    TextColor="White"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+                <HorizontalStackLayout Spacing="15"
+                                       HorizontalOptions="Center">
+                        <Button Text="Start"
+                                Clicked="StartTimer"
+                                BackgroundColor="#4CAF50"
+                                TextColor="White"/>
+                        <Button Text="Pause"
+                                Clicked="PauseTimer"
+                                BackgroundColor="#FFC107"
+                                TextColor="White"/>
+                        <Button Text="Reset"
+                                Clicked="ResetTimer"
+                                BackgroundColor="#F44336"
+                                TextColor="White"/>
+                </HorizontalStackLayout>
+        </VerticalStackLayout>
 </ContentPage>
