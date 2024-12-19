@@ -8,6 +8,7 @@ public partial class MainPage : ContentPage
 	private int _remainingTime = 25 * 60;
 	private bool _isRunning = false;
 	private int _sessionCount = 0;
+	private bool _isBreak = false;
 
 	public MainPage()
 	{
@@ -17,7 +18,7 @@ public partial class MainPage : ContentPage
 
 	private void StartAndPause(object sender, EventArgs e)
 	{
-		if (_sessionCount == 4 && !_isRunning)
+		if (_sessionCount == 4 && !_isRunning && !_isBreak)
 		{
 			_sessionCount = 0;
 			ResetSessions();
@@ -46,6 +47,7 @@ public partial class MainPage : ContentPage
 		_remainingTime = 25 * 60;
 		_isRunning = false;
 		_sessionCount = 0;
+		_isBreak = false;
 
 		ResetSessions();
 
@@ -62,12 +64,20 @@ public partial class MainPage : ContentPage
 
 			MainThread.BeginInvokeOnMainThread(() =>
 			{
-				DisplayAlert("Time's Up!", "Take a short break!", "OK");
-
-				_sessionCount++;
-				UpdateSessionColors();
-
-				_remainingTime = 25 * 60;
+				if (_isBreak)
+				{
+					DisplayAlert("Break Over!", "Get ready for your next focus session", "OK");
+					_isBreak = false;
+					_remainingTime = 25 * 60;
+				}
+				else
+				{
+					DisplayAlert("Time's Up!", "Take a short break!", "OK");
+					_sessionCount++;
+					UpdateSessionColors();
+					_isBreak = true;
+					_remainingTime = 5 * 60;
+				}
 
 				UpdateTimerLabel();
 				StartAndPauseTimer.Text = "Start";
