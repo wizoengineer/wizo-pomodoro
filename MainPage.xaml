@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wizo_pomodoro.MainPage"
-             BackgroundColor="#f3f4f6">
+             BackgroundColor="#020101">
 
         <VerticalStackLayout Spacing="25"
                              Padding="20"
@@ -12,21 +12,21 @@
                        Text="25:00"
                        FontSize="64"
                        HorizontalOptions="Center"
-                       TextColor="#FF6347"/>
+                       TextColor="White"/>
 
                 <HorizontalStackLayout Spacing="15"
                                        HorizontalOptions="Center">
                         <Button Text="Start"
                                 Clicked="StartTimer"
-                                BackgroundColor="#4CAF50"
+                                BackgroundColor="#3d3d3d"
                                 TextColor="White"/>
                         <Button Text="Pause"
                                 Clicked="PauseTimer"
-                                BackgroundColor="#FFC107"
+                                BackgroundColor="#3d3d3d"
                                 TextColor="White"/>
                         <Button Text="Reset"
                                 Clicked="ResetTimer"
-                                BackgroundColor="#F44336"
+                                BackgroundColor="#3d3d3d"
                                 TextColor="White"/>
                 </HorizontalStackLayout>
         </VerticalStackLayout>
