@@ -56,6 +56,9 @@ public partial class MainPage : ContentPage
 			{
 				DisplayAlert("Time's Up!", "Take a short break!", "OK");
 
+				_remainingTime = 25 * 60;
+				UpdateTimerLabel();
+
 				StartAndPauseTimer.Text = "Start";
 			});
 
