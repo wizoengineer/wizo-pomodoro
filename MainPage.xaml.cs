@@ -14,6 +14,7 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		UpdateTimerLabel();
+		UpdateSessionTypeLabel();
 	}
 
 	private void StartAndPause(object sender, EventArgs e)
@@ -53,6 +54,7 @@ public partial class MainPage : ContentPage
 
 		StartAndPauseTimer.Text = "Start";
 		UpdateTimerLabel();
+		UpdateSessionTypeLabel();
 	}
 
 	private void UpdateTimer(object sender, ElapsedEventArgs e)
@@ -80,6 +82,7 @@ public partial class MainPage : ContentPage
 				}
 
 				UpdateTimerLabel();
+				UpdateSessionTypeLabel();
 				StartAndPauseTimer.Text = "Start";
 			});
 
@@ -94,6 +97,11 @@ public partial class MainPage : ContentPage
 	private void UpdateTimerLabel()
 	{
 		TimerLabel.Text = $"{_remainingTime / 60:D2}:{_remainingTime % 60:D2}";
+	}
+
+	private void UpdateSessionTypeLabel()
+	{
+		SessionTypeLabel.Text = _isBreak ? "Break" : "Focus";
 	}
 
 	private void UpdateSessionColors()
@@ -112,4 +120,3 @@ public partial class MainPage : ContentPage
 		Session4.BackgroundColor = Colors.Gray;
 	}
 }
-
