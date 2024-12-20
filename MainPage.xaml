@@ -58,7 +58,7 @@
                         WidthRequest="120"
                         HeightRequest="50"/>
 
-                <Button Text="?"
+                <Button Text="R"
                         Clicked="ResetTimer"
                         BackgroundColor="Black"
                         BorderWidth="1"
@@ -70,17 +70,5 @@
                         HorizontalOptions="Start"
                         VerticalOptions="End"
                         Margin="30,0,0,30"/>
-
-                <Button Text="🛠️"
-                        BackgroundColor="Black"
-                        BorderWidth="1"
-                        BorderColor="Gray"
-                        TextColor="White"
-                        WidthRequest="50"
-                        HeightRequest="50"
-                        CornerRadius="25"
-                        HorizontalOptions="End"
-                        VerticalOptions="End"
-                        Margin="0,0,30,30"/>
         </Grid>
 </ContentPage>
